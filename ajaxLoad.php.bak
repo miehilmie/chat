@@ -1,0 +1,14 @@
+<script>
+	$(document).ready(function() {
+	});
+</script>
+<?php
+	include_once 'database.php';
+
+	$result = mysql_query("SELECT * FROM `messages`");
+	while($row = mysql_fetch_assoc($result))
+	{
+		echo '<div><strong>'.$row['posted_by'].': </strong>'.$row['message'].'</div>';
+	}
+	mysql_close();
+?>
